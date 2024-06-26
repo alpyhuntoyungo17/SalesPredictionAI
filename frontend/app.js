@@ -1,53 +1,43 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const predictionForm = document.getElementById('predictionForm');
-    const predictionResult = document.getElementById('predictionResult');
+    const form = document.getElementById('prediction-form');
+    const result = document.getElementById('result');
+    const predictionValue = document.getElementById('prediction-value');
 
-    predictionForm.addEventListener('submit', async function(event) {
-        event.preventDefault();
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
 
-        const product = document.getElementById('product').value;
-        const units = document.getElementById('units').value;
-
-        const predictionData = {
-            product: product,
-            units: parseInt(units)
+        const formData = {
+            day_of_week: document.getElementById('day_of_week').value,
+            month: parseInt(document.getElementById('month').value),
+            category: document.getElementById('category').value,
+            store_id: document.getElementById('store_id').value,
+            weather_condition: document.getElementById('weather_condition').value,
+            avg_price: parseFloat(document.getElementById('avg_price').value),
+            is_weekend: parseInt(document.getElementById('is_weekend').value),
+            is_holiday: parseInt(document.getElementById('is_holiday').value),
+            promotion_active: parseInt(document.getElementById('promotion_active').value),
+            temperature: parseFloat(document.getElementById('temperature').value)
         };
 
-        try {
-            const prediction = await predictSales(predictionData);
-            displayPrediction(prediction);
-        } catch (error) {
-            console.error('Prediction request failed:', error);
-            displayErrorMessage('Failed to predict sales. Please try again later.');
-        }
-    });
-
-    async function predictSales(data) {
-        const response = await fetch('/predict', {
+        fetch('/predict', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify(formData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert('Error: ' + data.error);
+            } else {
+                predictionValue.textContent = `$${data.prediction.toFixed(2)}`;
+                result.classList.remove('hidden');
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
         });
-
-        if (!response.ok) {
-            throw new Error('Failed to predict sales.');
-        }
-
-        return await response.json();
-    }
-
-    function displayPrediction(prediction) {
-        predictionResult.innerHTML = `
-            <h3>Prediction Result</h3>
-            <p><strong>Product:</strong> ${prediction.product}</p>
-            <p><strong>Units Sold:</strong> ${prediction.units}</p>
-            <p><strong>Predicted Revenue:</strong> $${prediction.revenue.toFixed(2)}</p>
-        `;
-    }
-
-    function displayErrorMessage(message) {
-        predictionResult.innerHTML = `<p class="error">${message}</p>`;
-    }
+    });
 });
