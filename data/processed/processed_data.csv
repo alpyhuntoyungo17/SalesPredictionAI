@@ -1,22 +1,11 @@
-Store,ProductA,ProductB,Sales,Promotion,Holiday,Weather_Sunny,Weather_Rainy,Weather_Cloudy
-1,1,0,100,1,0,1,0,0
-1,1,0,150,0,0,0,1,0
-1,1,0,200,0,1,0,0,1
-1,1,0,130,1,0,1,0,0
-1,1,0,170,0,0,1,0,0
-1,0,1,90,1,0,1,0,0
-1,0,1,110,0,0,0,1,0
-1,0,1,80,0,1,0,0,1
-1,0,1,120,1,0,1,0,0
-1,0,1,160,0,0,1,0,0
-2,1,0,200,1,0,1,0,0
-2,1,0,220,0,0,0,1,0
-2,1,0,180,0,1,0,0,1
-2,1,0,240,1,0,1,0,0
-2,1,0,210,0,0,1,0,0
-2,0,1,150,1,0,1,0,0
-2,0,1,170,0,0,0,1,0
-2,0,1,130,0,1,0,0,1
-2,0,1,160,1,0,1,0,0
-2,0,1,180,0,0,1,0,0
-
+date,day_of_week,month,product_id,category,avg_price,total_quantity,total_sales,store_id,is_weekend,is_holiday,promotion_active,weather_condition,temperature
+2023-01-01,Sunday,1,001,Electronics,999.99,5,4999.95,S001,1,1,0,Sunny,10.5
+2023-01-01,Sunday,1,002,Electronics,599.99,10,5999.90,S001,1,1,1,Sunny,10.5
+2023-01-01,Sunday,1,003,Home Appliances,79.99,8,639.92,S002,1,1,0,Cloudy,9.8
+2023-01-02,Monday,1,001,Electronics,999.99,3,2999.97,S002,0,0,0,Rainy,8.2
+2023-01-02,Monday,1,004,Electronics,49.99,15,749.85,S001,0,0,1,Rainy,8.5
+2023-01-02,Monday,1,005,Home Appliances,29.99,12,359.88,S003,0,0,0,Rainy,7.9
+2023-01-03,Tuesday,1,002,Electronics,599.99,7,4199.93,S003,0,0,1,Partly Cloudy,11.3
+2023-01-03,Tuesday,1,006,Home Appliances,39.99,6,239.94,S002,0,0,0,Partly Cloudy,11.0
+2023-01-03,Tuesday,1,007,Electronics,149.99,9,1349.91,S001,0,0,1,Sunny,12.1
+2023-01-04,Wednesday,1,001,Electronics,999.99,4,3999.96,S003,0,0,1,Sunny,13.5
