@@ -1,1 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Sales Prediction</h1>
+            
+            <form id="prediction-form">
+                <div class="field">
+                    <label class="label">Store</label>
+                    <div class="control">
+                        <input class="input" type="number" id="store" placeholder="Store number">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Product</label>
+                    <div class="control">
+                        <div class="select">
+                            <select id="product">
+                                <option value="ProductA">Product A</option>
+                                <option value="ProductB">Product B</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Promotion</label>
+                    <div class="control">
+                        <div class="select">
+                            <select id="promotion">
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Holiday</label>
+                    <div class="control">
+                        <div class="select">
+                            <select id="holiday">
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Weather</label>
+                    <div class="control">
+                        <div class="select">
+                            <select id="weather">
+                                <option value="Sunny">Sunny</option>
+                                <option value="Rainy">Rainy</option>
+                                <option value="Cloudy">Cloudy</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control">
+                    <button class="button is-primary" type="button" onclick="makePrediction()">Predict Sales</button>
+                </div>
+            </form>
+
+            <div class="section">
+                <h2 class="title is-4">Prediction Result</h2>
+                <p id="prediction-result"></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        async function makePrediction() {
+            const store = document.getElementById('store').value;
+            const product = document.getElementById('product').value;
+            const promotion = document.getElementById('promotion').value;
+            const holiday = document.getElementById('holiday').value;
+            const weather = document.getElementById('weather').value;
+
+            const data = [{
+                Store: parseInt(store),
+                ProductA: product === 'ProductA' ? 1 : 0,
+                ProductB: product === 'ProductB' ? 1 : 0,
+                Promotion: parseInt(promotion),
+                Holiday: parseInt(holiday),
+                Weather_Sunny: weather === 'Sunny' ? 1 : 0,
+                Weather_Rainy: weather === 'Rainy' ? 1 : 0,
+                Weather_Cloudy: weather === 'Cloudy' ? 1 : 0
+            }];
+
+            try {
+                const response = await axios.post('http://localhost:3000/predict', data);
+                const predictions = response.data.predictions;
+                document.getElementById('prediction-result').innerText = 'Predicted Sales: ' + predictions[0];
+            } catch (error) {
+                console.error(error);
+                document.getElementById('prediction-result').innerText = 'Error in making prediction';
+            }
+        }
+    </script>
+</body>
+</html>
 
