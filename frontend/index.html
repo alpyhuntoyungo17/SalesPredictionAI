@@ -103,7 +103,7 @@
             try {
                 const response = await axios.post('http://localhost:3000/predict', data);
                 const predictions = response.data.predictions;
-                document.getElementById('prediction-result').innerText = 'Predicted Sales: ' + predictions[0];
+                document.getElementById('prediction-result').innerText = 'Predicted Sales: ' + predictions[1];
             } catch (error) {
                 console.error(error);
                 document.getElementById('prediction-result').innerText = 'Error in making prediction';
