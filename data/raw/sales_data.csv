@@ -1,1 +1,22 @@
+Date,Store,Product,Sales,Promotion,Holiday,Weather
+2024-01-01,1,ProductA,100,1,0,Sunny
+2024-01-02,1,ProductA,150,0,0,Rainy
+2024-01-03,1,ProductA,200,0,1,Cloudy
+2024-01-04,1,ProductA,130,1,0,Sunny
+2024-01-05,1,ProductA,170,0,0,Sunny
+2024-01-01,1,ProductB,90,1,0,Sunny
+2024-01-02,1,ProductB,110,0,0,Rainy
+2024-01-03,1,ProductB,80,0,1,Cloudy
+2024-01-04,1,ProductB,120,1,0,Sunny
+2024-01-05,1,ProductB,160,0,0,Sunny
+2024-01-01,2,ProductA,200,1,0,Sunny
+2024-01-02,2,ProductA,220,0,0,Rainy
+2024-01-03,2,ProductA,180,0,1,Cloudy
+2024-01-04,2,ProductA,240,1,0,Sunny
+2024-01-05,2,ProductA,210,0,0,Sunny
+2024-01-01,2,ProductB,150,1,0,Sunny
+2024-01-02,2,ProductB,170,0,0,Rainy
+2024-01-03,2,ProductB,130,0,1,Cloudy
+2024-01-04,2,ProductB,160,1,0,Sunny
+2024-01-05,2,ProductB,180,0,0,Sunny
 
