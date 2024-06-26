@@ -1,22 +1,11 @@
-Date,Store,Product,Sales,Promotion,Holiday,Weather
-2024-01-01,1,ProductA,100,1,0,Sunny
-2024-01-02,1,ProductA,150,0,0,Rainy
-2024-01-03,1,ProductA,200,0,1,Cloudy
-2024-01-04,1,ProductA,130,1,0,Sunny
-2024-01-05,1,ProductA,170,0,0,Sunny
-2024-01-01,1,ProductB,90,1,0,Sunny
-2024-01-02,1,ProductB,110,0,0,Rainy
-2024-01-03,1,ProductB,80,0,1,Cloudy
-2024-01-04,1,ProductB,120,1,0,Sunny
-2024-01-05,1,ProductB,160,0,0,Sunny
-2024-01-01,2,ProductA,200,1,0,Sunny
-2024-01-02,2,ProductA,220,0,0,Rainy
-2024-01-03,2,ProductA,180,0,1,Cloudy
-2024-01-04,2,ProductA,240,1,0,Sunny
-2024-01-05,2,ProductA,210,0,0,Sunny
-2024-01-01,2,ProductB,150,1,0,Sunny
-2024-01-02,2,ProductB,170,0,0,Rainy
-2024-01-03,2,ProductB,130,0,1,Cloudy
-2024-01-04,2,ProductB,160,1,0,Sunny
-2024-01-05,2,ProductB,180,0,0,Sunny
-
+date,product_id,product_name,category,price,quantity_sold,total_sales,store_id,promotion
+2023-01-01,001,Laptop X1,Electronics,999.99,5,4999.95,S001,0
+2023-01-01,002,Smartphone Y2,Electronics,599.99,10,5999.90,S001,1
+2023-01-01,003,Coffee Maker Z3,Home Appliances,79.99,8,639.92,S002,0
+2023-01-02,001,Laptop X1,Electronics,999.99,3,2999.97,S002,0
+2023-01-02,004,Bluetooth Speaker,Electronics,49.99,15,749.85,S001,1
+2023-01-02,005,Toaster T5,Home Appliances,29.99,12,359.88,S003,0
+2023-01-03,002,Smartphone Y2,Electronics,599.99,7,4199.93,S003,1
+2023-01-03,006,Blender B6,Home Appliances,39.99,6,239.94,S002,0
+2023-01-03,007,Headphones H7,Electronics,149.99,9,1349.91,S001,1
+2023-01-04,001,Laptop X1,Electronics,999.99,4,3999.96,S003,1
